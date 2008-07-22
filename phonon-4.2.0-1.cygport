@@ -1,0 +1,23 @@
+SVN_MODULE=${PN}
+SVN_URI="svn://anonsvn.kde.org/home/kde"
+SVN_BRANCH="branches/phonon/4.2"
+SVN_REV=836516
+
+inherit qt4-cmake svn
+
+DESCRIPTION="Qt4/KDE4 multimedia layer with support for multiple backends"
+HOMEPAGE="http://www.kde.org/"
+
+PKG_NAMES="${PN} lib${PN}4 lib${PN}4-devel ${PN}-backend-gstreamer"
+PKG_HINTS="setup lib devel gstreamer"
+PKG_CONTENTS[0]=	# empty
+PKG_CONTENTS[1]="usr/bin/*-4.dll usr/share/doc/"
+PKG_CONTENTS[2]="usr/include/ ${QT4_LIBDIR#/}/ usr/lib/pkgconfig/ usr/share/dbus-1/interfaces/"
+PKG_CONTENTS[3]="${QT4_PLUGINSDIR#/}/ usr/share/kde4/services/"
+
+src_install() {
+	cd ${B}
+	cyginstall
+
+	mv ${D}${QT4_LIBDIR}/pkgconfig ${D}/usr/lib/
+}
