@@ -1,0 +1,5 @@
+category: Audio Video KDE
+requires: cygwin libglib2.0_0 libgstreamer0.10_0 gstreamer010-plugins-base libGL1 libphonon4 libQtCore4 libQtGui4 libQtOpenGL4
+external-source: phonon
+sdesc: "Qt4 multimedia abstraction layer (GStreamer backend)"
+ldesc: "Qt4/KDE4 multimedia engine with support for multiple backends"

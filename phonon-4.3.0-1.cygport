@@ -1,0 +1,16 @@
+inherit kde4 qt4-cmake
+
+DESCRIPTION="Qt4/KDE4 multimedia layer with support for multiple backends"
+
+PATCH_URI="4.3.0-includedir.patch
+           4.3.0-backend-module.patch"
+
+PKG_NAMES="${PN} lib${PN}4 lib${PN}-devel lib${PN}4-backend-gstreamer lib${PN}4-backend-xine"
+libphonon4_CONTENTS="usr/bin/*-4.dll usr/share/doc/"
+libphonon_devel_CONTENTS="usr/include/ usr/lib/lib* usr/lib/pkgconfig/
+                          usr/share/dbus-1/interfaces/"
+libphonon4_backend_gstreamer_CONTENTS="usr/lib/kde4/plugins/phonon_backend/phonon_gstreamer.dll
+                                       usr/share/kde4/services/phononbackends/gstreamer.desktop"
+libphonon4_backend_xine_CONTENTS="usr/lib/kde4/plugins/phonon_backend/phonon_xine.dll
+                                  usr/share/icons/oxygen/*/apps/phonon-xine.*
+                                  usr/share/kde4/services/phononbackends/xine.desktop"
