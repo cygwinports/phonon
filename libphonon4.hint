@@ -1,5 +1,5 @@
-category: Audio Video KDE
-requires: cygwin libQtCore4 libQtDBus4 libQtGui4
+category: KDE
+requires: cygwin libgcc1 libGL1 libglib2.0_0 libgstaudio0.10_0 libgstinterfaces0.10_0 libgstreamer0.10_0 libgstvideo0.10_0 libQtCore4 libQtDBus4 libQtGui4 libQtOpenGL4 libstdc++6
 external-source: phonon
 sdesc: "Qt4 multimedia abstraction layer (runtime)"
 ldesc: "Qt4/KDE4 multimedia engine with support for multiple backends"

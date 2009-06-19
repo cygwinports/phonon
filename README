@@ -3,19 +3,19 @@ phonon
 Qt4/KDE4 multimedia engine with support for multiple backends
 
 Runtime requirements:
-  cygwin-1.5.25-15
-  libQtCore4-4.4.2-1
-  libQtDBus4-4.4.2-1
-  libQtGui4-4.4.2-1
-(libphonon4-gstreamer)
-  gstreamer010-plugins-base-0.10.21-2
-  libGL1-7.2-2
-  libglib2.0_0-2.18.4-1
-  libgstreamer0.10_0-0.10.21-2
-  libQtOpenGL4-4.4.2-1
-(libphonon4-xine)
-  libxcb1-1.1-2
-  libxine1-1.1.15-2
+  cygwin-1.7.0-49
+  libgcc1-4.3.2-2
+  libGL1-7.2-10
+  libglib2.0_0-2.20.3-1
+  libgstaudio0.10_0-0.10.23-1
+  libgstinterfaces0.10_0-0.10.23-1
+  libgstreamer0.10_0-0.10.23-1
+  libgstvideo0.10_0-0.10.23-1
+  libQtCore4-4.4.3-10
+  libQtDBus4-4.4.3-10
+  libQtGui4-4.4.3-10
+  libQtOpenGL4-4.4.3-10
+  libstdc++6-4.3.2-2
 
 Build requirements:
 (besides corresponding -devel packages)
@@ -36,18 +36,16 @@ Canonical download:
 -------------------------------------------
 
 Build instructions:
-  unpack phonon-4.3.0-X-src.tar.bz2
+  unpack phonon-4.3.1-X-src.tar.bz2
     if you use setup to install this src package, it will be
 	 unpacked under /usr/src automatically
   cd /usr/src
-  cygport ./phonon-4.3.0-X.cygport all
+  cygport ./phonon-4.3.1-X.cygport all
 
 This will create:
-  /usr/src/libphonon4-4.3.0-X.tar.bz2
-  /usr/src/libphonon4-backend-gstreamer-4.3.0-X.tar.bz2
-  /usr/src/libphonon4-backend-xine-4.3.0-X.tar.bz2
-  /usr/src/libphonon-devel-4.3.0-X.tar.bz2
-  /usr/src/phonon-4.3.0-X-src.tar.bz2
+  /usr/src/libphonon4-4.3.1-X.tar.bz2
+  /usr/src/libphonon-devel-4.3.1-X.tar.bz2
+  /usr/src/phonon-4.3.1-X-src.tar.bz2
 
 -------------------------------------------
 
@@ -56,25 +54,9 @@ Files included in the binary packages:
 (libphonon4)
   /usr/bin/cygphonon-4.dll
   /usr/bin/cygphononexperimental-4.dll
-  /usr/share/doc/phonon-4.3.0/BUGS
-  /usr/share/doc/phonon-4.3.0/COPYING.LIB
-  /usr/share/doc/phonon-4.3.0/TODO
-
-(libphonon4-backend-gstreamer)
   /usr/lib/kde4/plugins/phonon_backend/phonon_gstreamer.dll
+  /usr/share/doc/phonon/COPYING.LIB
   /usr/share/kde4/services/phononbackends/gstreamer.desktop
-
-(libphonon4-backend-xine)
-  /etc/postinstall/phonon.sh
-  /usr/lib/kde4/plugins/phonon_backend/phonon_xine.dll
-  /usr/share/icons/oxygen/128x128/apps/phonon-xine.png
-  /usr/share/icons/oxygen/16x16/apps/phonon-xine.png
-  /usr/share/icons/oxygen/22x22/apps/phonon-xine.png
-  /usr/share/icons/oxygen/32x32/apps/phonon-xine.png
-  /usr/share/icons/oxygen/48x48/apps/phonon-xine.png
-  /usr/share/icons/oxygen/64x64/apps/phonon-xine.png
-  /usr/share/icons/oxygen/scalable/apps/phonon-xine.svgz
-  /usr/share/kde4/services/phononbackends/xine.desktop
 
 (libphonon-devel)
   /usr/include/kde4/KDE/Phonon/AbstractAudioOutput
@@ -175,6 +157,75 @@ Files included in the binary packages:
   /usr/include/kde4/phonon/volumefadereffect.h
   /usr/include/kde4/phonon/volumefaderinterface.h
   /usr/include/kde4/phonon/volumeslider.h
+  /usr/include/qt4/Qt/abstractaudiooutput.h
+  /usr/include/qt4/Qt/abstractmediastream.h
+  /usr/include/qt4/Qt/abstractvideooutput.h
+  /usr/include/qt4/Qt/addoninterface.h
+  /usr/include/qt4/Qt/audiooutput.h
+  /usr/include/qt4/Qt/audiooutputinterface.h
+  /usr/include/qt4/Qt/backendcapabilities.h
+  /usr/include/qt4/Qt/backendinterface.h
+  /usr/include/qt4/Qt/effect.h
+  /usr/include/qt4/Qt/effectinterface.h
+  /usr/include/qt4/Qt/effectparameter.h
+  /usr/include/qt4/Qt/effectwidget.h
+  /usr/include/qt4/Qt/mediacontroller.h
+  /usr/include/qt4/Qt/medianode.h
+  /usr/include/qt4/Qt/mediaobject.h
+  /usr/include/qt4/Qt/mediaobjectinterface.h
+  /usr/include/qt4/Qt/mediasource.h
+  /usr/include/qt4/Qt/objectdescription.h
+  /usr/include/qt4/Qt/objectdescriptionmodel.h
+  /usr/include/qt4/Qt/path.h
+  /usr/include/qt4/Qt/phonon
+  /usr/include/qt4/Qt/phonon_export.h
+  /usr/include/qt4/Qt/phonondefs.h
+  /usr/include/qt4/Qt/phononnamespace.h
+  /usr/include/qt4/Qt/platformplugin.h
+  /usr/include/qt4/Qt/seekslider.h
+  /usr/include/qt4/Qt/streaminterface.h
+  /usr/include/qt4/Qt/videoplayer.h
+  /usr/include/qt4/Qt/videowidget.h
+  /usr/include/qt4/Qt/videowidgetinterface.h
+  /usr/include/qt4/Qt/volumefadereffect.h
+  /usr/include/qt4/Qt/volumefaderinterface.h
+  /usr/include/qt4/Qt/volumeslider.h
+  /usr/include/qt4/phonon/Phonon/AbstractAudioOutput
+  /usr/include/qt4/phonon/Phonon/AbstractMediaStream
+  /usr/include/qt4/phonon/Phonon/AbstractVideoOutput
+  /usr/include/qt4/phonon/Phonon/AddonInterface
+  /usr/include/qt4/phonon/Phonon/AudioDevice
+  /usr/include/qt4/phonon/Phonon/AudioDeviceEnumerator
+  /usr/include/qt4/phonon/Phonon/AudioOutput
+  /usr/include/qt4/phonon/Phonon/AudioOutputDevice
+  /usr/include/qt4/phonon/Phonon/AudioOutputDeviceModel
+  /usr/include/qt4/phonon/Phonon/AudioOutputInterface
+  /usr/include/qt4/phonon/Phonon/BackendCapabilities
+  /usr/include/qt4/phonon/Phonon/BackendInterface
+  /usr/include/qt4/phonon/Phonon/Effect
+  /usr/include/qt4/phonon/Phonon/EffectDescription
+  /usr/include/qt4/phonon/Phonon/EffectDescriptionModel
+  /usr/include/qt4/phonon/Phonon/EffectInterface
+  /usr/include/qt4/phonon/Phonon/EffectParameter
+  /usr/include/qt4/phonon/Phonon/EffectWidget
+  /usr/include/qt4/phonon/Phonon/Global
+  /usr/include/qt4/phonon/Phonon/MediaController
+  /usr/include/qt4/phonon/Phonon/MediaNode
+  /usr/include/qt4/phonon/Phonon/MediaObject
+  /usr/include/qt4/phonon/Phonon/MediaObjectInterface
+  /usr/include/qt4/phonon/Phonon/MediaSource
+  /usr/include/qt4/phonon/Phonon/ObjectDescription
+  /usr/include/qt4/phonon/Phonon/ObjectDescriptionModel
+  /usr/include/qt4/phonon/Phonon/Path
+  /usr/include/qt4/phonon/Phonon/PlatformPlugin
+  /usr/include/qt4/phonon/Phonon/SeekSlider
+  /usr/include/qt4/phonon/Phonon/StreamInterface
+  /usr/include/qt4/phonon/Phonon/VideoPlayer
+  /usr/include/qt4/phonon/Phonon/VideoWidget
+  /usr/include/qt4/phonon/Phonon/VideoWidgetInterface
+  /usr/include/qt4/phonon/Phonon/VolumeFaderEffect
+  /usr/include/qt4/phonon/Phonon/VolumeFaderInterface
+  /usr/include/qt4/phonon/Phonon/VolumeSlider
   /usr/lib/libphonon.dll.a
   /usr/lib/libphononexperimental.dll.a
   /usr/lib/pkgconfig/phonon.pc
@@ -184,12 +235,8 @@ Files included in the binary packages:
 
 Port Notes:
 
------ version 4.3.0-1 -----
-Version bump for KDE 4.2.
-
------ version 4.2.0-1 -----
-Provide phonon from kdesupport, as the version bundled with qt4 
-is too old for KDE 4.1.
+----- version 4.3.1-1 -----
+Initial release for Cygwin 1.7.
 
 
 Cygwin port maintained by:
