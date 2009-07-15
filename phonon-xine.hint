@@ -1,5 +1,5 @@
 category: KDE
-requires: libgcc1 libQtCore4 libQtDBus4 libQtGui4 libstdc++6
+requires: libgcc1 libphonon4 libQtCore4 libQtDBus4 libQtGui4 libstdc++6 libxcb1 libxine1
 external-source: phonon
 sdesc: "Qt4 multimedia abstraction layer (runtime)"
 ldesc: "Qt4/KDE4 multimedia engine with support for multiple backends"
