@@ -8,7 +8,7 @@ PATCH_URI="4.3.0-includedir.patch
 PKG_NAMES="${PN} lib${PN}4 lib${PN}-devel ${PN}-gstreamer ${PN}-xine"
 libphonon4_CONTENTS="--exclude=*xine* usr/bin/*-4.dll usr/share/doc/"
 libphonon_devel_CONTENTS="usr/include/ usr/lib/lib* usr/lib/pkgconfig/
-                          usr/share/dbus-1/interfaces/"
+                          ${QT4_LIBDIR#/} usr/share/dbus-1/interfaces/"
 phonon_gstreamer_CONTENTS="usr/lib/kde4/plugins/phonon_backend/phonon_gstreamer.dll
                            usr/share/kde4/services/phononbackends/gstreamer.desktop"
 phonon_xine_CONTENTS="usr/lib/kde4/plugins/phonon_backend/phonon_xine.dll
@@ -23,7 +23,6 @@ src_install() {
 	dodir ${QT4_INCLUDEDIR}/Qt
 	dodir ${QT4_INCLUDEDIR}/phonon/Phonon
 	cp ${D}/usr/include/kde4/phonon/*.h ${D}${QT4_INCLUDEDIR}/Qt/
-#	cp ${D}/usr/include/kde4/phonon/*.h ${D}${QT4_INCLUDEDIR}/phonon/
 
 	cp ${D}/usr/include/kde4/KDE/Phonon/* ${D}${QT4_INCLUDEDIR}/phonon/Phonon/
 	sed -e 's|/phonon/|/Qt/|' -i ${D}${QT4_INCLUDEDIR}/phonon/Phonon/*
@@ -37,4 +36,8 @@ src_install() {
 		echo "#include \"${h##*/}\"" >> ${D}${QT4_INCLUDEDIR}/Qt/phonon
 	done
 	echo "#endif /* QT_PHONON_MODULE_H */" >> ${D}${QT4_INCLUDEDIR}/Qt/phonon
+
+	# for FindQt4 QT_PHONON_LIBRARY
+	dodir ${QT4_LIBDIR}
+	dosym ../../libphonon.dll.a ${QT4_LIBDIR}/libphonon.dll.a
 }
