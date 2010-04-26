@@ -3,32 +3,30 @@ phonon
 Qt4/KDE4 multimedia engine with support for multiple backends
 
 Runtime requirements:
-  cygwin-1.7.0-51
-  libgcc1-4.3.2-2
-  libQtCore4-4.5.2-1
-  libQtDBus4-4.5.2-1
-  libQtGui4-4.5.2-1
-  libstdc++6-4.3.2-2
+  cygwin-1.7.1-5
+  libgcc1-4.3.4-3
+  libQtCore4-4.6.2-1
+  libQtDBus4-4.6.2-1
+  libQtGui4-4.6.2-1
+  libstdc++6-4.3.4-3
 (phonon-gstreamer)
-  libGL1-7.2-10
-  libglib2.0_0-2.20.3-1
-  libgstaudio0.10_0-0.10.23-1
-  libgstinterfaces0.10_0-0.10.23-1
-  libgstreamer0.10_0-0.10.23-1
-  libgstvideo0.10_0-0.10.23-1
-  libQtOpenGL4-4.5.2-1
+  libGL1-7.6.1-1
+  libglib2.0_0-2.22.4-2
+  libgstinterfaces0.10_0-0.10.28-1
+  libgstreamer0.10_0-0.10.28-1
+  libQtOpenGL4-4.6.2-1
 (phonon-xine)
-  libxcb1-1.3-1
-  libxine1-1.1.16.3-1
+  libxcb1-1.5-1
+  libxine1-1.1.17-1
 
 Build requirements:
 (besides corresponding -devel packages)
   automoc4-0.9.88-10
-  binutils-20080624-2
-  cmake-2.6.4-10
-  cygport-0.9.7-1
-  gcc4-core-4.3.2-2
-  gcc4-g++-4.3.2-2
+  binutils-2.20.51-2
+  cmake-2.8.0-10
+  cygport-0.9.81-1
+  gcc4-core-4.3.4-3
+  gcc4-g++-4.3.4-3
   make-3.81-2
   pkg-config-0.23b-10
 
@@ -41,220 +39,25 @@ Canonical download:
 -------------------------------------------
 
 Build instructions:
-  unpack phonon-4.3.1-X-src.tar.bz2
+  unpack phonon-4.4.0-X-src.tar.bz2
     if you use setup to install this src package, it will be
 	 unpacked under /usr/src automatically
   cd /usr/src
-  cygport ./phonon-4.3.1-X.cygport all
+  cygport ./phonon-4.4.0-X.cygport all
 
 This will create:
-  /usr/src/libphonon4-4.3.1-X.tar.bz2
-  /usr/src/libphonon-devel-4.3.1-X.tar.bz2
-  /usr/src/phonon-4.3.1-X-src.tar.bz2
-  /usr/src/phonon-gstreamer-4.3.1-X.tar.bz2
-  /usr/src/phonon-xine-4.3.1-X.tar.bz2
+  /usr/src/libphonon4-4.4.0-X.tar.bz2
+  /usr/src/libphonon-devel-4.4.0-X.tar.bz2
+  /usr/src/phonon-4.4.0-X-src.tar.bz2
+  /usr/src/phonon-gstreamer-4.4.0-X.tar.bz2
+  /usr/src/phonon-xine-4.4.0-X.tar.bz2
 
 -------------------------------------------
 
-Files included in the binary packages:
-
-(libphonon4)
-  /usr/bin/cygphonon-4.dll
-  /usr/bin/cygphononexperimental-4.dll
-  /usr/share/doc/phonon/COPYING.LIB
-
-(phonon-gstreamer)
-  /usr/lib/kde4/plugins/phonon_backend/phonon_gstreamer.dll
-  /usr/share/kde4/services/phononbackends/gstreamer.desktop
-
-(phonon-xine)
-  /usr/lib/kde4/plugins/phonon_backend/phonon_xine.dll
-  /usr/share/icons/oxygen/128x128/apps/phonon-xine.png
-  /usr/share/icons/oxygen/16x16/apps/phonon-xine.png
-  /usr/share/icons/oxygen/22x22/apps/phonon-xine.png
-  /usr/share/icons/oxygen/32x32/apps/phonon-xine.png
-  /usr/share/icons/oxygen/48x48/apps/phonon-xine.png
-  /usr/share/icons/oxygen/64x64/apps/phonon-xine.png
-  /usr/share/icons/oxygen/scalable/apps/phonon-xine.svgz
-  /usr/share/kde4/services/phononbackends/xine.desktop
-
-(libphonon-devel)
-  /usr/include/kde4/KDE/Phonon/AbstractAudioOutput
-  /usr/include/kde4/KDE/Phonon/AbstractMediaStream
-  /usr/include/kde4/KDE/Phonon/AbstractVideoOutput
-  /usr/include/kde4/KDE/Phonon/AddonInterface
-  /usr/include/kde4/KDE/Phonon/AudioDevice
-  /usr/include/kde4/KDE/Phonon/AudioDeviceEnumerator
-  /usr/include/kde4/KDE/Phonon/AudioOutput
-  /usr/include/kde4/KDE/Phonon/AudioOutputDevice
-  /usr/include/kde4/KDE/Phonon/AudioOutputDeviceModel
-  /usr/include/kde4/KDE/Phonon/AudioOutputInterface
-  /usr/include/kde4/KDE/Phonon/BackendCapabilities
-  /usr/include/kde4/KDE/Phonon/BackendInterface
-  /usr/include/kde4/KDE/Phonon/Effect
-  /usr/include/kde4/KDE/Phonon/EffectDescription
-  /usr/include/kde4/KDE/Phonon/EffectDescriptionModel
-  /usr/include/kde4/KDE/Phonon/EffectInterface
-  /usr/include/kde4/KDE/Phonon/EffectParameter
-  /usr/include/kde4/KDE/Phonon/EffectWidget
-  /usr/include/kde4/KDE/Phonon/Experimental/AbstractVideoDataOutput
-  /usr/include/kde4/KDE/Phonon/Experimental/AudioDataOutput
-  /usr/include/kde4/KDE/Phonon/Experimental/SnapshotInterface
-  /usr/include/kde4/KDE/Phonon/Experimental/VideoDataOutput
-  /usr/include/kde4/KDE/Phonon/Experimental/VideoDataOutputInterface
-  /usr/include/kde4/KDE/Phonon/Experimental/VideoFrame
-  /usr/include/kde4/KDE/Phonon/Experimental/VideoFrame2
-  /usr/include/kde4/KDE/Phonon/Experimental/Visualization
-  /usr/include/kde4/KDE/Phonon/Global
-  /usr/include/kde4/KDE/Phonon/MediaController
-  /usr/include/kde4/KDE/Phonon/MediaNode
-  /usr/include/kde4/KDE/Phonon/MediaObject
-  /usr/include/kde4/KDE/Phonon/MediaObjectInterface
-  /usr/include/kde4/KDE/Phonon/MediaSource
-  /usr/include/kde4/KDE/Phonon/ObjectDescription
-  /usr/include/kde4/KDE/Phonon/ObjectDescriptionModel
-  /usr/include/kde4/KDE/Phonon/Path
-  /usr/include/kde4/KDE/Phonon/PlatformPlugin
-  /usr/include/kde4/KDE/Phonon/SeekSlider
-  /usr/include/kde4/KDE/Phonon/StreamInterface
-  /usr/include/kde4/KDE/Phonon/VideoPlayer
-  /usr/include/kde4/KDE/Phonon/VideoWidget
-  /usr/include/kde4/KDE/Phonon/VideoWidgetInterface
-  /usr/include/kde4/KDE/Phonon/VolumeFaderEffect
-  /usr/include/kde4/KDE/Phonon/VolumeFaderInterface
-  /usr/include/kde4/KDE/Phonon/VolumeSlider
-  /usr/include/kde4/phonon/abstractaudiooutput.h
-  /usr/include/kde4/phonon/abstractmediastream.h
-  /usr/include/kde4/phonon/abstractvideooutput.h
-  /usr/include/kde4/phonon/addoninterface.h
-  /usr/include/kde4/phonon/audiooutput.h
-  /usr/include/kde4/phonon/audiooutputinterface.h
-  /usr/include/kde4/phonon/backendcapabilities.h
-  /usr/include/kde4/phonon/backendinterface.h
-  /usr/include/kde4/phonon/effect.h
-  /usr/include/kde4/phonon/effectinterface.h
-  /usr/include/kde4/phonon/effectparameter.h
-  /usr/include/kde4/phonon/effectwidget.h
-  /usr/include/kde4/phonon/experimental/abstractaudiodataoutput.h
-  /usr/include/kde4/phonon/experimental/abstractvideodataoutput.h
-  /usr/include/kde4/phonon/experimental/audiodataoutput.h
-  /usr/include/kde4/phonon/experimental/audiodataoutputinterface.h
-  /usr/include/kde4/phonon/experimental/audioformat.h
-  /usr/include/kde4/phonon/experimental/avcapture.h
-  /usr/include/kde4/phonon/experimental/backendcapabilities.h
-  /usr/include/kde4/phonon/experimental/backendinterface.h
-  /usr/include/kde4/phonon/experimental/export.h
-  /usr/include/kde4/phonon/experimental/mediasource.h
-  /usr/include/kde4/phonon/experimental/objectdescription.h
-  /usr/include/kde4/phonon/experimental/packet.h
-  /usr/include/kde4/phonon/experimental/packetpool.h
-  /usr/include/kde4/phonon/experimental/phononnamespace.h
-  /usr/include/kde4/phonon/experimental/snapshotinterface.h
-  /usr/include/kde4/phonon/experimental/videodataoutput.h
-  /usr/include/kde4/phonon/experimental/videodataoutput2.h
-  /usr/include/kde4/phonon/experimental/videodataoutputinterface.h
-  /usr/include/kde4/phonon/experimental/videoframe.h
-  /usr/include/kde4/phonon/experimental/videoframe2.h
-  /usr/include/kde4/phonon/experimental/videowidget.h
-  /usr/include/kde4/phonon/experimental/visualization.h
-  /usr/include/kde4/phonon/mediacontroller.h
-  /usr/include/kde4/phonon/medianode.h
-  /usr/include/kde4/phonon/mediaobject.h
-  /usr/include/kde4/phonon/mediaobjectinterface.h
-  /usr/include/kde4/phonon/mediasource.h
-  /usr/include/kde4/phonon/objectdescription.h
-  /usr/include/kde4/phonon/objectdescriptionmodel.h
-  /usr/include/kde4/phonon/path.h
-  /usr/include/kde4/phonon/phonon_export.h
-  /usr/include/kde4/phonon/phonondefs.h
-  /usr/include/kde4/phonon/phononnamespace.h
-  /usr/include/kde4/phonon/platformplugin.h
-  /usr/include/kde4/phonon/seekslider.h
-  /usr/include/kde4/phonon/streaminterface.h
-  /usr/include/kde4/phonon/videoplayer.h
-  /usr/include/kde4/phonon/videowidget.h
-  /usr/include/kde4/phonon/videowidgetinterface.h
-  /usr/include/kde4/phonon/volumefadereffect.h
-  /usr/include/kde4/phonon/volumefaderinterface.h
-  /usr/include/kde4/phonon/volumeslider.h
-  /usr/include/qt4/Qt/abstractaudiooutput.h
-  /usr/include/qt4/Qt/abstractmediastream.h
-  /usr/include/qt4/Qt/abstractvideooutput.h
-  /usr/include/qt4/Qt/addoninterface.h
-  /usr/include/qt4/Qt/audiooutput.h
-  /usr/include/qt4/Qt/audiooutputinterface.h
-  /usr/include/qt4/Qt/backendcapabilities.h
-  /usr/include/qt4/Qt/backendinterface.h
-  /usr/include/qt4/Qt/effect.h
-  /usr/include/qt4/Qt/effectinterface.h
-  /usr/include/qt4/Qt/effectparameter.h
-  /usr/include/qt4/Qt/effectwidget.h
-  /usr/include/qt4/Qt/mediacontroller.h
-  /usr/include/qt4/Qt/medianode.h
-  /usr/include/qt4/Qt/mediaobject.h
-  /usr/include/qt4/Qt/mediaobjectinterface.h
-  /usr/include/qt4/Qt/mediasource.h
-  /usr/include/qt4/Qt/objectdescription.h
-  /usr/include/qt4/Qt/objectdescriptionmodel.h
-  /usr/include/qt4/Qt/path.h
-  /usr/include/qt4/Qt/phonon
-  /usr/include/qt4/Qt/phonon_export.h
-  /usr/include/qt4/Qt/phonondefs.h
-  /usr/include/qt4/Qt/phononnamespace.h
-  /usr/include/qt4/Qt/platformplugin.h
-  /usr/include/qt4/Qt/seekslider.h
-  /usr/include/qt4/Qt/streaminterface.h
-  /usr/include/qt4/Qt/videoplayer.h
-  /usr/include/qt4/Qt/videowidget.h
-  /usr/include/qt4/Qt/videowidgetinterface.h
-  /usr/include/qt4/Qt/volumefadereffect.h
-  /usr/include/qt4/Qt/volumefaderinterface.h
-  /usr/include/qt4/Qt/volumeslider.h
-  /usr/include/qt4/phonon/Phonon/AbstractAudioOutput
-  /usr/include/qt4/phonon/Phonon/AbstractMediaStream
-  /usr/include/qt4/phonon/Phonon/AbstractVideoOutput
-  /usr/include/qt4/phonon/Phonon/AddonInterface
-  /usr/include/qt4/phonon/Phonon/AudioDevice
-  /usr/include/qt4/phonon/Phonon/AudioDeviceEnumerator
-  /usr/include/qt4/phonon/Phonon/AudioOutput
-  /usr/include/qt4/phonon/Phonon/AudioOutputDevice
-  /usr/include/qt4/phonon/Phonon/AudioOutputDeviceModel
-  /usr/include/qt4/phonon/Phonon/AudioOutputInterface
-  /usr/include/qt4/phonon/Phonon/BackendCapabilities
-  /usr/include/qt4/phonon/Phonon/BackendInterface
-  /usr/include/qt4/phonon/Phonon/Effect
-  /usr/include/qt4/phonon/Phonon/EffectDescription
-  /usr/include/qt4/phonon/Phonon/EffectDescriptionModel
-  /usr/include/qt4/phonon/Phonon/EffectInterface
-  /usr/include/qt4/phonon/Phonon/EffectParameter
-  /usr/include/qt4/phonon/Phonon/EffectWidget
-  /usr/include/qt4/phonon/Phonon/Global
-  /usr/include/qt4/phonon/Phonon/MediaController
-  /usr/include/qt4/phonon/Phonon/MediaNode
-  /usr/include/qt4/phonon/Phonon/MediaObject
-  /usr/include/qt4/phonon/Phonon/MediaObjectInterface
-  /usr/include/qt4/phonon/Phonon/MediaSource
-  /usr/include/qt4/phonon/Phonon/ObjectDescription
-  /usr/include/qt4/phonon/Phonon/ObjectDescriptionModel
-  /usr/include/qt4/phonon/Phonon/Path
-  /usr/include/qt4/phonon/Phonon/PlatformPlugin
-  /usr/include/qt4/phonon/Phonon/SeekSlider
-  /usr/include/qt4/phonon/Phonon/StreamInterface
-  /usr/include/qt4/phonon/Phonon/VideoPlayer
-  /usr/include/qt4/phonon/Phonon/VideoWidget
-  /usr/include/qt4/phonon/Phonon/VideoWidgetInterface
-  /usr/include/qt4/phonon/Phonon/VolumeFaderEffect
-  /usr/include/qt4/phonon/Phonon/VolumeFaderInterface
-  /usr/include/qt4/phonon/Phonon/VolumeSlider
-  /usr/lib/libphonon.dll.a
-  /usr/lib/libphononexperimental.dll.a
-  /usr/lib/pkgconfig/phonon.pc
-  /usr/lib/qt4/lib/libphonon.dll.a
-  /usr/share/dbus-1/interfaces/org.kde.Phonon.AudioOutput.xml
-
-------------------
-
 Port Notes:
+
+----- version 4.4.0-1 -----
+Version bump for Qt 4.6 and KDE 4.4.
 
 ----- version 4.3.1-2 -----
 Enabled Xine backend; rearranged packaging accordingly.

@@ -2,8 +2,11 @@ inherit kde4
 
 DESCRIPTION="Qt4/KDE4 multimedia layer with support for multiple backends"
 
-PATCH_URI="4.3.0-includedir.patch
-           4.3.0-backend-module.patch"
+SRC_URI="mirror://kde/stable/phonon/${PV}/${P}.tgz"
+SRC_DIR=${PN}-${PV%.0}
+
+PATCH_URI="4.4.0-includedir.patch
+           4.4.0-ansi-M_PI.patch"
 
 PKG_NAMES="${PN} lib${PN}4 lib${PN}-devel ${PN}-gstreamer ${PN}-xine"
 libphonon4_CONTENTS="--exclude=*xine* usr/bin/*-4.dll usr/share/doc/"

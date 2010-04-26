@@ -1,0 +1,12 @@
+M_PI is not available in -ansi mode.
+
+--- origsrc/phonon-4.4/xine/kequalizer_plugin.cpp	2010-02-23 09:38:04.000000000 -0600
++++ src/phonon-4.4/xine/kequalizer_plugin.cpp	2010-04-26 00:50:34.428730600 -0500
+@@ -34,6 +34,7 @@
+ #include "backend.h"
+ 
+ #include <QObject>
++#undef __STRICT_ANSI__
+ #include <cmath>
+ 
+ #define __STDC_FORMAT_MACROS
