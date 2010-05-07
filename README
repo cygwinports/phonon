@@ -39,24 +39,24 @@ Canonical download:
 -------------------------------------------
 
 Build instructions:
-  unpack phonon-4.4.0-X-src.tar.bz2
+  unpack phonon-4.4.1-X-src.tar.bz2
     if you use setup to install this src package, it will be
 	 unpacked under /usr/src automatically
   cd /usr/src
-  cygport ./phonon-4.4.0-X.cygport all
+  cygport ./phonon-4.4.1-X.cygport all
 
 This will create:
-  /usr/src/libphonon4-4.4.0-X.tar.bz2
-  /usr/src/libphonon-devel-4.4.0-X.tar.bz2
-  /usr/src/phonon-4.4.0-X-src.tar.bz2
-  /usr/src/phonon-gstreamer-4.4.0-X.tar.bz2
-  /usr/src/phonon-xine-4.4.0-X.tar.bz2
+  /usr/src/libphonon4-4.4.1-X.tar.bz2
+  /usr/src/libphonon-devel-4.4.1-X.tar.bz2
+  /usr/src/phonon-4.4.1-X-src.tar.bz2
+  /usr/src/phonon-gstreamer-4.4.1-X.tar.bz2
+  /usr/src/phonon-xine-4.4.1-X.tar.bz2
 
 -------------------------------------------
 
 Port Notes:
 
------ version 4.4.0-1 -----
+----- version 4.4.1-1 -----
 Version bump for Qt 4.6 and KDE 4.4.
 
 ----- version 4.3.1-2 -----
