@@ -2,18 +2,14 @@ inherit kde4
 
 DESCRIPTION="Qt4/KDE4 multimedia layer with support for multiple backends"
 
-PATCH_URI="4.4.0-includedir.patch
-           4.4.0-ansi-M_PI.patch"
+SRC_URI="mirror://kde/stable/phonon/${PV}/src/${P}.tar.bz2"
 
-PKG_NAMES="lib${PN}4 lib${PN}-devel ${PN}-gstreamer ${PN}-xine"
+PATCH_URI="4.4.4-includedir.patch"
+
+PKG_NAMES="lib${PN}4 lib${PN}-devel"
 libphonon4_CONTENTS="--exclude=*xine* usr/bin/*-4.dll usr/share/doc/"
 libphonon_devel_CONTENTS="usr/include/ usr/lib/lib* usr/lib/pkgconfig/
-                          ${QT4_LIBDIR#/} usr/share/dbus-1/ usr/share/qt4/"
-phonon_gstreamer_CONTENTS="usr/lib/kde4/plugins/phonon_backend/phonon_gstreamer.dll
-                           usr/share/kde4/services/phononbackends/gstreamer.desktop"
-phonon_xine_CONTENTS="etc/postinstall/ usr/lib/kde4/plugins/phonon_backend/phonon_xine.dll
-                      usr/share/icons/oxygen/*/apps/phonon-xine.*
-                      usr/share/kde4/services/phononbackends/xine.desktop"
+                          ${QT4_LIBDIR#/} usr/share/dbus-1/ usr/share/phonon-buildsystem/ usr/share/qt4/"
 
 src_install() {
 	cd ${B}
