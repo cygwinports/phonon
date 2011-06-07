@@ -8,8 +8,8 @@ PATCH_URI="4.4.4-includedir.patch"
 
 PKG_NAMES="lib${PN}4 lib${PN}-devel"
 libphonon4_CONTENTS="--exclude=*xine* usr/bin/*-4.dll usr/share/doc/"
-libphonon_devel_CONTENTS="usr/include/ usr/lib/lib* usr/lib/pkgconfig/
-                          ${QT4_LIBDIR#/} usr/share/dbus-1/ usr/share/phonon-buildsystem/ usr/share/qt4/"
+libphonon_devel_CONTENTS="usr/include/ usr/lib/lib* usr/lib/pkgconfig/ usr/lib/qt4/
+                          usr/share/dbus-1/ usr/share/phonon-buildsystem/ usr/share/qt4/"
 
 src_install() {
 	cd ${B}
