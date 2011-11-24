@@ -2,7 +2,7 @@ inherit kde4
 
 DESCRIPTION="Qt4/KDE4 multimedia layer with support for multiple backends"
 
-SRC_URI="mirror://kde/stable/phonon/${PV}/src/${P}.tar.bz2"
+SRC_URI="mirror://kde/stable/phonon/${PV}/src/${P}.tar.xz"
 
 PATCH_URI="4.4.4-includedir.patch"
 
