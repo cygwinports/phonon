@@ -11,6 +11,8 @@ libphonon4_CONTENTS="--exclude=*xine* usr/bin/*-4.dll usr/share/doc/"
 libphonon_devel_CONTENTS="usr/include/ usr/lib/lib* usr/lib/pkgconfig/ usr/lib/qt4/
                           usr/share/dbus-1/ usr/share/phonon-buildsystem/ usr/share/qt4/"
 
+CYGCMAKE_ARGS="-DWITH_QZeitgeist=OFF"
+
 src_install() {
 	cd ${B}
 	cyginstall
@@ -26,8 +28,8 @@ src_install() {
 	# copy headers so qmake can find them also
 	dodir ${QT4_INCLUDEDIR}/Qt
 	dosym ../kde4/phonon/ ${QT4_INCLUDEDIR}/phonon
-	cp ${D}/usr/include/kde4/phonon/phonon ${D}${QT4_INCLUDEDIR}/Qt/
-	cp ${D}/usr/include/kde4/phonon/*.h ${D}${QT4_INCLUDEDIR}/Qt/
+	dosym ../../kde4/phonon/phonon ${QT4_INCLUDEDIR}/Qt/
+	dosym ../../kde4/phonon/*.h ${QT4_INCLUDEDIR}/Qt/
 
 	# for FindQt4 QT_PHONON_LIBRARY
 	dodir ${QT4_LIBDIR}
