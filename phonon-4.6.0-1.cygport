@@ -1,0 +1,19 @@
+inherit kde4
+
+DESCRIPTION="Qt4/KDE4 multimedia layer with support for multiple backends"
+
+PKG_NAMES="lib${PN}4 lib${PN}-devel"
+libphonon4_CONTENTS="usr/bin/*-4.dll usr/share/doc/"
+libphonon_devel_CONTENTS="usr/include/ usr/lib/cmake/ usr/lib/lib* usr/lib/pkgconfig/ usr/lib/qt4/
+                          usr/share/dbus-1/ usr/share/phonon/buildsystem/ usr/share/qt4/"
+
+CYGCMAKE_ARGS="-DWITH_QZeitgeist=OFF"
+
+src_install() {
+	cd ${B}
+	cyginstall
+
+	dodir /usr/include/kde4
+	mv ${D}/usr/include/KDE ${D}/usr/include/kde4/
+	sed -i -e 's|"\.\./|"../../|g' $(find ${D}/usr/include/kde4/KDE/ -type f)
+}
