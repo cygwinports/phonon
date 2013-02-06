@@ -1,0 +1,16 @@
+These flags are Linux/Hurd-specific earlier in the file
+
+--- origsrc/phonon-4.6.0/cmake/FindPhononInternal.cmake	2011-12-19 14:30:45.000000000 -0600
++++ src/phonon-4.6.0/cmake/FindPhononInternal.cmake	2013-02-05 22:30:02.037239300 -0600
+@@ -310,9 +310,9 @@ endif (CMAKE_COMPILER_IS_GNUCXX)
+ 
+ # Random Stuff
+ 
+-if (CMAKE_COMPILER_IS_GNUCXX OR CMAKE_C_COMPILER MATCHES "icc")
++if (CMAKE_C_COMPILER MATCHES "icc")
+    set ( CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wnon-virtual-dtor -Wno-long-long -ansi -Wundef -Wcast-align -Wchar-subscripts -Wall -W -Wpointer-arith -Wformat-security -fno-check-new -fno-common")
+-endif (CMAKE_COMPILER_IS_GNUCXX OR CMAKE_C_COMPILER MATCHES "icc")
++endif (CMAKE_C_COMPILER MATCHES "icc")
+ 
+ # For Windows
+ if(MSVC)

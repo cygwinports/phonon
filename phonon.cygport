@@ -1,13 +1,22 @@
 inherit kde4
 
-DESCRIPTION="Qt4/KDE4 multimedia layer with support for multiple backends"
+NAME="phonon"
+VERSION=4.6.0
+RELEASE=2
+CATEGORY="KDE"
+SUMMARY="Qt4 multimedia abstraction layer"
+DESCRIPTION="Qt4/KDE4 multimedia engine with support for multiple backends"
+
+PATCH_URI="4.6.0-cxxflags.patch"
 
 PKG_NAMES="lib${PN}4 lib${PN}-devel"
+libphonon4_SUMMARY="${SUMMARY} (runtime)"
 libphonon4_CONTENTS="usr/bin/*-4.dll usr/share/doc/"
+libphonon_devel_SUMMARY="${SUMMARY} (development)"
 libphonon_devel_CONTENTS="usr/include/ usr/lib/cmake/ usr/lib/lib* usr/lib/pkgconfig/ usr/lib/qt4/
                           usr/share/dbus-1/ usr/share/phonon/buildsystem/ usr/share/qt4/"
 
-CYGCMAKE_ARGS="-DWITH_QZeitgeist=OFF"
+#DEBUG_PREFIX_MAPS=(designer/../../src/${P} phonon/../../src/${P})
 
 src_install() {
 	cd ${B}
