@@ -2,7 +2,7 @@ inherit kde4
 
 NAME="phonon"
 VERSION=4.8.2
-RELEASE=1
+RELEASE=2
 CATEGORY="Libs"
 SUMMARY="Qt4 multimedia abstraction layer"
 DESCRIPTION="Qt4/KDE4 multimedia engine with support for multiple backends"
@@ -16,7 +16,7 @@ libphonon_devel_SUMMARY="${SUMMARY} (development)"
 libphonon_devel_CONTENTS="usr/include/ usr/lib/cmake/ usr/lib/lib* usr/lib/pkgconfig/ usr/lib/qt4/
                           usr/share/dbus-1/ usr/share/phonon/buildsystem/ usr/share/qt4/"
 
-CYGCMAKE_ARGS="-DQT_LIBRARY_DIR=/usr/lib -DPHONON_INSTALL_QT_EXTENSIONS_INTO_SYSTEM_QT=ON"
+CYGCMAKE_ARGS="-DPHONON_PULSESUPPORT=OFF -DQT_LIBRARY_DIR=/usr/lib -DPHONON_INSTALL_QT_EXTENSIONS_INTO_SYSTEM_QT=ON"
 
 src_install() {
 	cd ${B}
