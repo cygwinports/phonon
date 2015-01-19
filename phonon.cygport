@@ -1,12 +1,12 @@
 inherit kde4
 
 NAME="phonon"
-VERSION=4.8.2
-RELEASE=2
+VERSION=4.8.3
+RELEASE=1
 CATEGORY="Libs"
 SUMMARY="Qt4 multimedia abstraction layer"
 DESCRIPTION="Qt4/KDE4 multimedia engine with support for multiple backends"
-SRC_URI="mirror://kde/stable/phonon/${VERSION}/phonon-${VERSION}.tar.xz"
+SRC_URI="mirror://kde/stable/phonon/${VERSION}/src/phonon-${VERSION}.tar.xz"
 PATCH_URI="4.6.0-cxxflags.patch"
 
 PKG_NAMES="lib${NAME}4 lib${NAME}-devel"
