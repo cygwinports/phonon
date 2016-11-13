@@ -1,28 +1,81 @@
-inherit kde4
+inherit kde4 qt5
 
 NAME="phonon"
-VERSION=4.8.3
+VERSION=4.9.0
 RELEASE=1
 CATEGORY="Libs"
-SUMMARY="Qt4 multimedia abstraction layer"
+SUMMARY="Multimedia abstraction layer for Qt"
 DESCRIPTION="Qt4/KDE4 multimedia engine with support for multiple backends"
-SRC_URI="mirror://kde/stable/phonon/${VERSION}/src/phonon-${VERSION}.tar.xz"
-PATCH_URI="4.6.0-cxxflags.patch"
+SRC_URI="mirror://kde/stable/phonon/${VERSION}/phonon-${VERSION}.tar.xz"
 
-PKG_NAMES="lib${NAME}4 lib${NAME}-devel"
-libphonon4_SUMMARY="${SUMMARY} (runtime)"
-libphonon4_CONTENTS="usr/bin/*-4.dll usr/share/doc/"
-libphonon_devel_SUMMARY="${SUMMARY} (development)"
-libphonon_devel_CONTENTS="usr/include/ usr/lib/cmake/ usr/lib/lib* usr/lib/pkgconfig/ usr/lib/qt4/
-                          usr/share/dbus-1/ usr/share/phonon/buildsystem/ usr/share/qt4/"
+PKG_NAMES="lib${NAME}4 lib${NAME}-devel lib${NAME}4qt5_4 lib${NAME}4qt5-devel"
+libphonon4_SUMMARY="${SUMMARY}4 (runtime)"
+libphonon4_CONTENTS="
+	usr/bin/cygphonon-4.dll
+	usr/bin/cygphononexperimental-4.dll
+	usr/share/doc/${NAME}/
+"
+libphonon_devel_SUMMARY="${SUMMARY}4 (development)"
+libphonon_devel_CONTENTS="
+	usr/include/kde4/KDE/Phonon/
+	usr/include/phonon/
+	usr/lib/cmake/phonon/
+	usr/lib/libphonon.dll.a
+	usr/lib/libphononexperimental.dll.a
+	usr/lib/pkgconfig/phonon.pc
+	${QT4_MKSPECSDIR#/}/modules/qt_phonon.pri
+	${QT4_PLUGINSDIR#/}/designer/cygphononwidgets.dll
+	usr/share/dbus-1/interfaces/org.kde.Phonon.AudioOutput.xml
+	usr/share/phonon/buildsystem/
+"
+libphonon4qt5_4_SUMMARY="${SUMMARY}5 (runtime)"
+libphonon4qt5_4_CONTENTS="
+	usr/bin/cygphonon4qt5*-4.dll
+	usr/share/doc/${NAME}4qt5/
+"
+libphonon4qt5_devel_SUMMARY="${SUMMARY}5 (development)"
+libphonon4qt5_devel_CONTENTS="
+	usr/include/phonon4qt5/
+	usr/lib/cmake/phonon4qt5/
+	usr/lib/libphonon4qt5*.dll.a
+	usr/lib/pkgconfig/phonon4qt5.pc
+	${QT5_MKSPECSDIR#/}/modules/qt_phonon4qt5.pri
+	${QT5_PLUGINSDIR#/}/designer/phononwidgets.dll
+	usr/share/dbus-1/interfaces/org.kde.Phonon4Qt5.AudioOutput.xml
+	usr/share/phonon4qt5/buildsystem/
+"
+phonon_debuginfo_OBSOLETES="phonon4qt5-debuginfo"
 
-CYGCMAKE_ARGS="-DPHONON_PULSESUPPORT=OFF -DQT_LIBRARY_DIR=/usr/lib -DPHONON_INSTALL_QT_EXTENSIONS_INTO_SYSTEM_QT=ON"
+# PulseSupport still freezes (e.g. in systemsettings->Multimedia->A/V Settings)
+# glib main loop is generally suspect
+CYGCMAKE_ARGS="
+	-DQT_LIBRARY_DIR=/usr/lib
+	-DPHONON_INSTALL_QT_EXTENSIONS_INTO_SYSTEM_QT=ON
+	-DPHONON_PULSESUPPORT=OFF
+	-D__KDE_HAVE_GCC_VISIBILITY=OFF
+"
+
+src_compile() {
+	mkdir -p ${B}/qt{4,5}
+
+	cd ${B}/qt4
+	kde4_compile
+
+	cd ${B}/qt5
+	cygcmake -DPHONON_BUILD_PHONON4QT5=ON
+	cygmake
+}
 
 src_install() {
-	cd ${B}
+	cd ${B}/qt4
+	cyginstall
+	cd ${B}/qt5
 	cyginstall
 
 	dodir /usr/include/kde4
 	mv ${D}/usr/include/KDE ${D}/usr/include/kde4/
 	sed -i -e 's|"\.\./|"../../|g' $(find ${D}/usr/include/kde4/KDE/ -type f)
+
+	docinto /phonon4qt5
+	dodoc ${S}/COPYING.LIB
 }

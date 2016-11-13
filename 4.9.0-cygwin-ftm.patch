@@ -1,0 +1,10 @@
+--- origsrc/phonon-4.9.0/phonon/pulsesupport.cpp	2016-04-17 23:25:17.000000000 -0500
++++ src/phonon-4.9.0/phonon/pulsesupport.cpp	2016-11-03 13:09:39.265297900 -0500
+@@ -20,6 +20,7 @@
+     License along with this library.  If not, see <http://www.gnu.org/licenses/>.
+ */
+ 
++#define _POSIX_C_SOURCE 200112L /* unsetenv */
+ #include "pulsesupport.h"
+ 
+ #include <QAbstractEventDispatcher>
