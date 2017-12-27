@@ -1,12 +1,13 @@
 inherit kde4 qt5
 
 NAME="phonon"
-VERSION=4.9.0
+VERSION=4.9.1
 RELEASE=1
 CATEGORY="Libs"
 SUMMARY="Multimedia abstraction layer for Qt"
 DESCRIPTION="Qt4/KDE4 multimedia engine with support for multiple backends"
 SRC_URI="mirror://kde/stable/phonon/${VERSION}/phonon-${VERSION}.tar.xz"
+PATCH_URI="4.9.0-cygwin-ftm.patch"
 
 PKG_NAMES="lib${NAME}4 lib${NAME}-devel lib${NAME}4qt5_4 lib${NAME}4qt5-devel"
 libphonon4_SUMMARY="${SUMMARY}4 (runtime)"
