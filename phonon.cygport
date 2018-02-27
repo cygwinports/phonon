@@ -2,7 +2,7 @@ inherit kde4 qt5
 
 NAME="phonon"
 VERSION=4.9.1
-RELEASE=1
+RELEASE=2
 CATEGORY="Libs"
 SUMMARY="Multimedia abstraction layer for Qt"
 DESCRIPTION="Qt4/KDE4 multimedia engine with support for multiple backends"
@@ -64,14 +64,14 @@ src_compile() {
 
 	cd ${B}/qt5
 	cygcmake -DPHONON_BUILD_PHONON4QT5=ON
-	cygmake
+	cygninja
 }
 
 src_install() {
 	cd ${B}/qt4
-	cyginstall
+	ninja_install
 	cd ${B}/qt5
-	cyginstall
+	ninja_install
 
 	dodir /usr/include/kde4
 	mv ${D}/usr/include/KDE ${D}/usr/include/kde4/
